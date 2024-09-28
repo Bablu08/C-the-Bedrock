@@ -36,9 +36,9 @@ void appendNode(struct Node** head, int data) {
 }
 
 /*
-\-----------------------------------------------/
-   Function to print the linked list
 /-----------------------------------------------\
+   Function to print the linked list
+\-----------------------------------------------/
 */
 void printList(struct Node* head) {
     if (head == NULL) {
@@ -55,9 +55,9 @@ void printList(struct Node* head) {
 }
 
 /*
-\-----------------------------------------------/
-   Function to insert node at beginning
 /-----------------------------------------------\
+   Function to insert node at beginning
+\-----------------------------------------------/
 */
 void insertAtBeginning(struct Node** head, int data) {
     struct Node* newNode = createNode(data);
@@ -66,18 +66,18 @@ void insertAtBeginning(struct Node** head, int data) {
 }
 
 /*
-\-----------------------------------------------/
-   Function to insert node at end
 /-----------------------------------------------\
+   Function to insert node at end
+\-----------------------------------------------/
 */
 void insertAtEnd(struct Node** head, int data) {
     appendNode(head, data);
 }
 
 /*
-\-----------------------------------------------/
-   Function to insert node at specific Position
 /-----------------------------------------------\
+   Function to insert node at specific Position
+\-----------------------------------------------/
 */
 void insertAtPosition(struct Node** head, int data, int position) {
     if (position == 1) {
@@ -102,9 +102,9 @@ void insertAtPosition(struct Node** head, int data, int position) {
 }
 
 /*
-\-----------------------------------------------/
-   Function to delete node at beginning
 /-----------------------------------------------\
+   Function to delete node at beginning
+\-----------------------------------------------/
 */
 void deleteAtBeginning(struct Node** head) {
     if (*head == NULL) {
@@ -117,9 +117,9 @@ void deleteAtBeginning(struct Node** head) {
 }
 
 /*
-\-----------------------------------------------/
-   Function to delete node at end
 /-----------------------------------------------\
+   Function to delete node at end
+\-----------------------------------------------/
 */
 void deleteAtEnd(struct Node** head) {
     if (*head == NULL) {
@@ -142,9 +142,9 @@ void deleteAtEnd(struct Node** head) {
 }
 
 /*
-\-----------------------------------------------/
-   Function to delete node at specific position
 /-----------------------------------------------\
+   Function to delete node at specific position
+\-----------------------------------------------/
 */
 void deleteAtPosition(struct Node** head, int position) {
     if (*head == NULL) {
@@ -173,9 +173,9 @@ void deleteAtPosition(struct Node** head, int position) {
 }
 
 /*
-\-----------------------------------------------/
-   Function to searching node
 /-----------------------------------------------\
+   Function to searching node
+\-----------------------------------------------/
 */
 void searchNode(struct Node* head, int key) {
     struct Node* temp = head;
@@ -192,9 +192,9 @@ void searchNode(struct Node* head, int key) {
 }
 
 /*
-\-----------------------------------------------/
-   Function to update node
 /-----------------------------------------------\
+   Function to update node
+\-----------------------------------------------/
 */
 void updateNode(struct Node* head, int oldData, int newData) {
     struct Node* temp = head;
@@ -210,9 +210,9 @@ void updateNode(struct Node* head, int oldData, int newData) {
 }
 
 /*
-\-----------------------------------------------/
-   Function to Reverse list
 /-----------------------------------------------\
+   Function to Reverse list
+\-----------------------------------------------/
 */
 void reverseList(struct Node** head) {
     struct Node* prev = NULL;
@@ -229,9 +229,9 @@ void reverseList(struct Node** head) {
 }
 
 /*
-\-----------------------------------------------/
-   Function to count nodes
 /-----------------------------------------------\
+   Function to count nodes
+\-----------------------------------------------/
 */
 int countNodes(struct Node* head) {
     int count = 0;
@@ -244,9 +244,9 @@ int countNodes(struct Node* head) {
 }
 
 /*
-\-----------------------------------------------/
-   Function to sort the list
 /-----------------------------------------------\
+   Function to sort the list
+\-----------------------------------------------/
 */
 void sortList(struct Node* head) {
     struct Node* i, *j;
@@ -263,9 +263,9 @@ void sortList(struct Node* head) {
 }
 
 /*
-\-----------------------------------------------/
-   Function to merge two linked list
 /-----------------------------------------------\
+   Function to merge two linked list
+\-----------------------------------------------/
 */
 struct Node* mergeLists(struct Node* head1, struct Node* head2) {
     if (head1 == NULL) return head2;
@@ -283,9 +283,9 @@ struct Node* mergeLists(struct Node* head1, struct Node* head2) {
 }
 
 /*
-\-----------------------------------------------/
-   Now continue main function
 /-----------------------------------------------\
+   Now continue main function
+\-----------------------------------------------/
 */
 
 int main(){
