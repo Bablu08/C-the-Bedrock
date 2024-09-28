@@ -59,73 +59,208 @@ void printList(struct Node* head) {
    Function to insert node at beginning
 /-----------------------------------------------\
 */
+void insertAtBeginning(struct Node** head, int data) {
+    struct Node* newNode = createNode(data);
+    newNode->next = *head;
+    *head = newNode;
+}
 
 /*
 \-----------------------------------------------/
    Function to insert node at end
 /-----------------------------------------------\
 */
+void insertAtEnd(struct Node** head, int data) {
+    appendNode(head, data);
+}
 
 /*
 \-----------------------------------------------/
    Function to insert node at specific Position
 /-----------------------------------------------\
 */
+void insertAtPosition(struct Node** head, int data, int position) {
+    if (position == 1) {
+        insertAtBeginning(head, data);
+        return;
+    }
+
+    struct Node* temp = *head;
+    struct Node* newNode = createNode(data);
+    for (int i = 1; i < position - 1 && temp != NULL; i++) {
+        temp = temp->next;
+    }
+
+    if (temp == NULL) {
+        printf("Position out of bounds\n");
+        free(newNode);
+        return;
+    }
+
+    newNode->next = temp->next;
+    temp->next = newNode;
+}
 
 /*
 \-----------------------------------------------/
    Function to delete node at beginning
 /-----------------------------------------------\
 */
+void deleteAtBeginning(struct Node** head) {
+    if (*head == NULL) {
+        printf("List is empty\n");
+        return;
+    }
+    struct Node* temp = *head;
+    *head = (*head)->next;
+    free(temp);
+}
 
 /*
 \-----------------------------------------------/
    Function to delete node at end
 /-----------------------------------------------\
 */
+void deleteAtEnd(struct Node** head) {
+    if (*head == NULL) {
+        printf("List is empty\n");
+        return;
+    }
+    struct Node* temp = *head;
+    if (temp->next == NULL) {
+        free(temp);
+        *head = NULL;
+        return;
+    }
+
+    while (temp->next->next != NULL) {
+        temp = temp->next;
+    }
+
+    free(temp->next);
+    temp->next = NULL;
+}
 
 /*
 \-----------------------------------------------/
    Function to delete node at specific position
 /-----------------------------------------------\
 */
+void deleteAtPosition(struct Node** head, int position) {
+    if (*head == NULL) {
+        printf("List is empty\n");
+        return;
+    }
+
+    if (position == 1) {
+        deleteAtBeginning(head);
+        return;
+    }
+
+    struct Node* temp = *head;
+    for (int i = 1; i < position - 1 && temp != NULL; i++) {
+        temp = temp->next;
+    }
+
+    if (temp == NULL || temp->next == NULL) {
+        printf("Position out of bounds\n");
+        return;
+    }
+
+    struct Node* delNode = temp->next;
+    temp->next = temp->next->next;
+    free(delNode);
+}
 
 /*
 \-----------------------------------------------/
    Function to searching node
 /-----------------------------------------------\
 */
+void searchNode(struct Node* head, int key) {
+    struct Node* temp = head;
+    int position = 1;
+    while (temp != NULL) {
+        if (temp->data == key) {
+            printf("Node with data %d found at position %d\n", key, position);
+            return;
+        }
+        temp = temp->next;
+        position++;
+    }
+    printf("Node with data %d not found\n", key);
+}
 
 /*
 \-----------------------------------------------/
    Function to update node
 /-----------------------------------------------\
 */
-
-/*
-\-----------------------------------------------/
-   Function to Display list
-/-----------------------------------------------\
-*/
+void updateNode(struct Node* head, int oldData, int newData) {
+    struct Node* temp = head;
+    while (temp != NULL) {
+        if (temp->data == oldData) {
+            temp->data = newData;
+            printf("Node updated from %d to %d\n", oldData, newData);
+            return;
+        }
+        temp = temp->next;
+    }
+    printf("Node with data %d not found\n", oldData);
+}
 
 /*
 \-----------------------------------------------/
    Function to Reverse list
 /-----------------------------------------------\
 */
+void reverseList(struct Node** head) {
+    struct Node* prev = NULL;
+    struct Node* curr = *head;
+    struct Node* next = NULL;
+    
+    while (curr != NULL) {
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+    }
+    *head = prev;
+}
 
 /*
 \-----------------------------------------------/
    Function to count nodes
 /-----------------------------------------------\
 */
+int countNodes(struct Node* head) {
+    int count = 0;
+    struct Node* temp = head;
+    while (temp != NULL) {
+        count++;
+        temp = temp->next;
+    }
+    return count;
+}
 
 /*
 \-----------------------------------------------/
    Function to sort the list
 /-----------------------------------------------\
 */
-
+void sortList(struct Node* head) {
+    struct Node* i, *j;
+    int temp;
+    for (i = head; i != NULL; i = i->next) {
+        for (j = i->next; j != NULL; j = j->next) {
+            if (i->data > j->data) {
+                temp = i->data;
+                i->data = j->data;
+                j->data = temp;
+            }
+        }
+    }
+}
 
 
 /*
