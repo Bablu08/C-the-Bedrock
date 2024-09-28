@@ -35,7 +35,11 @@ void appendNode(struct Node** head, int data) {
     temp->next = newNode; // Append new node at the end
 }
 
-// Function to print the linked list
+/*
+\-----------------------------------------------/
+   Function to print the linked list
+/-----------------------------------------------\
+*/
 void printList(struct Node* head) {
     if (head == NULL) {
         printf("The list is empty.\n");
@@ -50,10 +54,89 @@ void printList(struct Node* head) {
     printf("NULL\n");
 }
 
+/*
+\-----------------------------------------------/
+   Function to insert node at beginning
+/-----------------------------------------------\
+*/
+
+/*
+\-----------------------------------------------/
+   Function to insert node at end
+/-----------------------------------------------\
+*/
+
+/*
+\-----------------------------------------------/
+   Function to insert node at specific Position
+/-----------------------------------------------\
+*/
+
+/*
+\-----------------------------------------------/
+   Function to delete node at beginning
+/-----------------------------------------------\
+*/
+
+/*
+\-----------------------------------------------/
+   Function to delete node at end
+/-----------------------------------------------\
+*/
+
+/*
+\-----------------------------------------------/
+   Function to delete node at specific position
+/-----------------------------------------------\
+*/
+
+/*
+\-----------------------------------------------/
+   Function to searching node
+/-----------------------------------------------\
+*/
+
+/*
+\-----------------------------------------------/
+   Function to update node
+/-----------------------------------------------\
+*/
+
+/*
+\-----------------------------------------------/
+   Function to Display list
+/-----------------------------------------------\
+*/
+
+/*
+\-----------------------------------------------/
+   Function to Reverse list
+/-----------------------------------------------\
+*/
+
+/*
+\-----------------------------------------------/
+   Function to count nodes
+/-----------------------------------------------\
+*/
+
+/*
+\-----------------------------------------------/
+   Function to sort the list
+/-----------------------------------------------\
+*/
+
+
+
+/*
+\-----------------------------------------------/
+   Now continue main function
+/-----------------------------------------------\
+*/
+
 int main(){
     system("clear");
 
-    // Your code here
     // Main function to take user input and create the linked list
     struct Node* head = NULL;
     int n, data;
@@ -73,9 +156,6 @@ int main(){
     // Print the linked list
     printf("The linked list is: \n");
     printList(head);
-
-
-
 
     // Linked List operations
     int choice, option;
@@ -100,16 +180,16 @@ int main(){
             case 1:
                 /* code */
                 printf("\nInsert at Beginning\n");
-                break;
+            break;
             case 2:
                 printf("\nInsert at End\n");
-                break;
+            break;
             case 3:
-            printf("\nInsert at Specific Position\n");
-                break;
+                printf("\nInsert at Specific Position\n");
+            break;
             default:
                 printf("\nEnter Correct Operation\nThank You!\n");
-                break;
+            break;
             }
             break;
         case 2:
@@ -121,44 +201,44 @@ int main(){
             case 1:
                 /* code */
                 printf("\Delete at Beginning\n");
-                break;
+            break;
             case 2:
                 printf("\Delete at End\n");
-                break;
+            break;
             case 3:
-            printf("\Delete at Specific Position\n");
-                break;
+                printf("\Delete at Specific Position\n");
+            break;
             default:
                 printf("\nEnter Correct Operation\nThank You!\n");
-                break;
+            break;
             }
             break;
         case 3:
             printf("\nSearch Operation\n");
-            break;
+        break;
         case 4:
             printf("\nUpdate Node\n");
-            break;
+        break;
         case 5:
             printf("\nDisplay the List\n");
             printf("The linked list is: \n");
             printList(head);
-            break;
+        break;
         case 6:
             printf("\nReverse the List\n");
-            break;
+        break;
         case 7:
             printf("\nCount Nodes\n");
-            break;
+        break;
         case 8:
             printf("\nSort the List\n");
-            break;
+        break;
         case 9:
             printf("\nMerge two List\n");
-            break;
+        break;
         default:
             printf("\nEnter Correct Operation\nThank You!\n");
-            break;
+        break;
         }
     }
 
