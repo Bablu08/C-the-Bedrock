@@ -262,6 +262,25 @@ void sortList(struct Node* head) {
     }
 }
 
+/*
+\-----------------------------------------------/
+   Function to merge two linked list
+/-----------------------------------------------\
+*/
+struct Node* mergeLists(struct Node* head1, struct Node* head2) {
+    if (head1 == NULL) return head2;
+    if (head2 == NULL) return head1;
+
+    struct Node* mergedHead = NULL;
+    if (head1->data <= head2->data) {
+        mergedHead = head1;
+        mergedHead->next = mergeLists(head1->next, head2);
+    } else {
+        mergedHead = head2;
+        mergedHead->next = mergeLists(head1, head2->next);
+    }
+    return mergedHead;
+}
 
 /*
 \-----------------------------------------------/
@@ -293,7 +312,7 @@ int main(){
     printList(head);
 
     // Linked List operations
-    int choice, option;
+        int choice, option, position, key, oldData, newData;
     while (1)
     {
         /* code */
@@ -310,17 +329,25 @@ int main(){
 
             printf("\n1.Insert at Beginning\n2.Insert at End\n3.Insert at Specific Position\n");
             scanf("%d", &option);
+            // For data input in list
+            printf("Enter the data to insert: ");
+            scanf("%d", &data);
             switch (option)
             {
             case 1:
                 /* code */
                 printf("\nInsert at Beginning\n");
+                insertAtBeginning(&head, data);
             break;
             case 2:
                 printf("\nInsert at End\n");
+                insertAtEnd(&head, data);
             break;
             case 3:
                 printf("\nInsert at Specific Position\n");
+                printf("Enter position: ");
+                scanf("%d", &position);
+                insertAtPosition(&head, data, position);
             break;
             default:
                 printf("\nEnter Correct Operation\nThank You!\n");
@@ -335,13 +362,18 @@ int main(){
             {
             case 1:
                 /* code */
-                printf("\Delete at Beginning\n");
+                printf("\nDelete at Beginning\n");
+                deleteAtBeginning(&head);
             break;
             case 2:
-                printf("\Delete at End\n");
+                printf("\nDelete at End\n");
+                deleteAtEnd(&head);
             break;
             case 3:
-                printf("\Delete at Specific Position\n");
+                printf("\nDelete at Specific Position\n");
+                printf("Enter position: ");
+                scanf("%d", &position);
+                deleteAtPosition(&head, position);
             break;
             default:
                 printf("\nEnter Correct Operation\nThank You!\n");
@@ -350,9 +382,16 @@ int main(){
             break;
         case 3:
             printf("\nSearch Operation\n");
+            scanf("%d", &key);
+            searchNode(head, key);
         break;
         case 4:
             printf("\nUpdate Node\n");
+            printf("Enter old data: ");
+            scanf("%d", &oldData);
+            printf("Enter new data: ");
+            scanf("%d", &newData);
+            updateNode(head, oldData, newData);
         break;
         case 5:
             printf("\nDisplay the List\n");
@@ -361,21 +400,33 @@ int main(){
         break;
         case 6:
             printf("\nReverse the List\n");
+            reverseList(&head);
         break;
         case 7:
             printf("\nCount Nodes\n");
+            printf("Total nodes: %d\n", countNodes(head));
         break;
         case 8:
             printf("\nSort the List\n");
+            sortList(head);
         break;
         case 9:
             printf("\nMerge two List\n");
+            struct Node* head2 = NULL;
+            printf("Enter the number of nodes for second list: ");
+            scanf("%d", &n);
+            for (int i = 0; i < n; i++) {
+                printf("Enter data for node %d: ", i + 1);
+                scanf("%d", &data);
+                appendNode(&head2, data);
+            }
+            head = mergeLists(head, head2);
+            printf("Lists merged\n");
         break;
         default:
             printf("\nEnter Correct Operation\nThank You!\n");
         break;
         }
     }
-
     return 0;
 }
