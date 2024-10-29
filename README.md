@@ -8,5 +8,5 @@
 ```c
 system("clear")
 ```
-```bash
+```c
 system("cls")
