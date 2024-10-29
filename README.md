@@ -5,7 +5,7 @@
 # Clearing the Terminal Screen
 > To clear the terminal screen in macOS, use `system("clear")`. For Windows, use `system("cls")`.
 
-```terminal
+```bash
 system("clear")
 ```
 ```bash
