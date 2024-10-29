@@ -3,7 +3,7 @@ C the Bedrock" is a collection of essential C programs, algorithms, and data str
 
 
 # Clearing the Terminal Screen
-To clear the terminal screen in macOS, use `system("clear")`. For Windows, use `system("cls")`.
+> To clear the terminal screen in macOS, use `system("clear")`. For Windows, use `system("cls")`.
 
 ```bash
 system("clear")
