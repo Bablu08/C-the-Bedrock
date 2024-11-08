@@ -40,9 +40,39 @@ void delete(){}
 */
 
 int main(){
-    system("clear");
+   system("clear");
 
-    // Your code here
-    printf("Hello, BST");
-    return 0;
+   // Your code here
+   printf("< < < Create a Binary Search Tree > > >");
+   printf("\nEnter Data on BST:\n");
+   // call function
+
+   // BST Operation
+   int choice;
+   while (1)
+   {
+      /* code */
+      printf("\n< < < BST Operations > > >\n");
+      printf("\n1.Insertion\n2.Searching\n3.Deletion\n");
+
+      printf("\nEnter Operations\n");
+      scanf("%d", &choice);
+      
+      switch (choice)
+      {
+      case 1:
+         insert();
+         break;
+      case 2:
+         search();
+         break;
+      case 3:
+         delete();
+         break;
+      default:
+         printf("You enter wrong Number.\nPlease try again!\n");
+         break;
+      }
+   }
+   return 0;
 }
